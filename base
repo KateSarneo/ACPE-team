@@ -1,0 +1,11 @@
+from vkwave.bots import SimpleLongPollBot, SimpleBotEvent
+
+bot = SimpleLongPollBot(tokens=config.TOKEN, group_id=config.PUBLIC_ID)
+
+@bot.message_handler()
+async def echo(event: SimpleBotEvent) -> str:
+    if event.object.object.message.text == "Текст":
+        
+
+if __name__ == '__main__' :
+    bot.run_forever()
